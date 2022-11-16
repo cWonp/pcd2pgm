@@ -121,7 +121,7 @@ int pgmWriter::pcdToPgm(pointCloudPtr pcdPoint, const std::string &pgmFileName)
     outPgmstream << mapWidth << ' ' << mapHeight << '\n';
     outPgmstream << 255 << '\n';
 
-    for (int row = 0; row < mapHeight; row++)
+    for (int row = mapHeight-1; row >= 0; row--)
     {
         for (int col = 0; col < mapWidth; col++)
         {
