@@ -26,22 +26,25 @@ private:
 public:
     pointCloudPtr pcdMap;
 
-    std::string pcdFileName;
-    std::string pgmFileName;
+    std::string pcdFileName = "/home/cocel/workspace/lastmile_cm4_/src/localization/map/TestMapCleanup_SetCentroid.pcd"; // .pcd file name to convert
+    std::string pgmFileName = "/home/cocel/workspace/lastmile_cm4_/src/localization/map/TestPGM"; // .pgm result grid map file name
 
-    // Map height and width
-    int margin_m = 5; // meter margin to create pgm map
-    double resolution = 0.05; // meter/pixel
+    /* -------------------------------
+        Params for converting map
+    ------------------------------- */
+    // 1. Grid map height and width
+    int margin_m = 5; // padding to create pgm map [meter]
+    double resolution = 0.05; // [meter/pixel]
 
-    // Floor and wall range
-    float floorZmin = -0.2;
+    // 2. Floor and wall range [meter]
+    float floorZmin = -0.2; // Pointcloud in floorZmin ~ floorZmax -> FreeSpace
     float floorZmax = 0.2;
-    float collisionZmin = 0.3;
+    float collisionZmin = 0.3; // Pointcloud in collisionZmin ~ collisionZmax -> CollisionSpace
     float collisionZmax = 1.2;
 
-    float searchRadius = 0.27; // octree search radius
+    float searchRadius = 0.27; // octree search radius using for filling holes in grid map
 
-    uint8_t freeSpace = 254; // gray pixel
+    uint8_t freeSpace = 254; // white pixel
     uint8_t unKnownSpace = 205; // gray pixel
     uint8_t collisionSpace = 0; // black pixel
 
