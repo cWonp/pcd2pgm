@@ -26,8 +26,8 @@ private:
 public:
     pointCloudPtr pcdMap;
 
-    std::string pcdFileName = "/home/cocel/workspace/lastmile_cm4_/src/localization/map/TestMapCleanup_SetCentroid.pcd"; // .pcd file name to convert
-    std::string pgmFileName = "/home/cocel/workspace/lastmile_cm4_/src/localization/map/TestPGM"; // .pgm result grid map file name
+    std::string pcdFileName = "../TestMapCleanup_SetCentroid.pcd"; // .pcd file name to convert
+    std::string pgmFileName = "../TestPGM"; // .pgm result grid map file name
 
     /* -------------------------------
         Params for converting map
