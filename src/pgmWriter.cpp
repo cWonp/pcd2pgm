@@ -190,8 +190,8 @@ int pgmWriter::pcdToPgm(pointCloudPtr pcdPoint, const std::string &pgmFileName)
 
 void pgmWriter::run()
 {
-    this->setPcdMap("/home/cocel/workspace/lastmile_cm4_/src/localization/map/TestMapCleanup_SetCentroid.pcd");
-    this->pgmFileName = "/home/cocel/workspace/lastmile_cm4_/src/localization/map/TestPGM";
+    this->setPcdMap("../TestMapCleanup_SetCentroid.pcd");
+    this->pgmFileName = "../TestPGM";
     int result = this->pcdToPgm(this->pcdMap, this->pgmFileName);
     if(result)  std::cout<<"Save in "<<this->pgmFileName<<std::endl;
     else    std::cout<<"Fail to convert"<<std::endl;
